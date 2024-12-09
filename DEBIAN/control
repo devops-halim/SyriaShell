@@ -1,0 +1,6 @@
+Package: SyriaShell
+Version: 1.0
+Architecture: all
+Maintainer: Abdulhalim Alnasani <a@alnasani.com>
+Description: A colorful welcome banner with system information.
+

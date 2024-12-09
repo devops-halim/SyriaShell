@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# Farben definieren
+#RED='\033[41m'      # Hintergrund rot
+RED='\033[31m'
+WHITE='\033[47m'    # Hintergrund weiß
+BLACK='\033[40m'    # Hintergrund schwarz
+GREEN='\033[42m'    # Textfarbe grün
+RESET='\033[0m'     # Farben zurücksetzen
+TEXT_GREEN='\033[32m'
+On_IGreen='\033[0;102m'
+BRed='\033[1;31m'
+BGreen='\033[1;32m'
+UWhite='\033[4;37m'
+URed='\033[4;31m'         # Red
+#echo -e "${GREEN}                                  ${RESET}"
+#echo -e "${WHITE}          ${RED}★ ${WHITE}    ${RED}★ ${WHITE}    ${RED}★ ${WHITE}          ${RESET}" # Weißer Streifen mit Sternen
+#echo -e "${BLACK}                                  ${RESET}"
+
+# Willkommensnachricht
+welcome_message() {
+#  echo
+  echo -e "       ${BGreen}  Welcome Back! Have fun :)${RESET}"
+  echo -e " ${RED}        SYRIA FREE 08.12.2024 ${RESET}"
+  echo
+ sleep 2  # Zeit, um die Willkommensnachricht anzuzeigen
+}
+
+draw_flag() {
+ echo -e "         Abdulhalim ALnasani ${RESET}"
+ echo -e "         Check out https://alnasani.com "
+ echo
+ echo -e "         ${GREEN}                                  ${RESET}"
+ echo -e "         ${WHITE}          ${RED}★ ${WHITE}    ${RED}★ ${WHITE}    ${RED}★ ${WHITE}          ${RESET}" # Weißer Streifen mit Sternen
+ echo -e "         ${BLACK}                                  ${RESET}"
+
+
+
+}
+add_info() {
+  echo
+  echo -e "         ${URed}System Information${RESET}:"
+  echo -e "         ${BRed}OS${RESET}:$(lsb_release -d | cut -f2)${RESET}" # Betriebssystem
+  echo -e "         ${BRed}Kernel${RESET}: $(uname -r)${RESET}"           # Kernel-Version
+  echo -e "         ${BRed}Uptime${RESET}: $(uptime -p)${RESET}"          # Systemlaufzeit
+  echo -e "         ${BRed}Shell${RESET}: $SHELL${RESET}"                 # Aktuelle Shell
+  echo -e "         ${BRed}Terminal${RESET}: $TERM${RESET}"               # Terminal
+ }
+
+welcome_message
+draw_flag
+add_info
