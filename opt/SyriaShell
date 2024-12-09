@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Farben definieren
+#Farben definieren
 #RED='\033[41m'      # Hintergrund rot
 RED='\033[31m'
 WHITE='\033[47m'    # Hintergrund weiß
