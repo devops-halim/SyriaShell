@@ -1,24 +1,24 @@
 #!/bin/bash
 
-# Modern Color Palette
+# Hacker/Cyber Color Palette
 RESET='\033[0m'
 BOLD='\033[1m'
 DIM='\033[2m'
+BLINK='\033[5m'
 
-# Vibrant Colors
-RED='\033[38;5;196m'
-BRIGHT_RED='\033[38;5;9m'
-GREEN='\033[38;5;46m'
-BRIGHT_GREEN='\033[38;5;10m'
-CYAN='\033[38;5;51m'
-BLUE='\033[38;5;39m'
-MAGENTA='\033[38;5;201m'
-YELLOW='\033[38;5;226m'
-ORANGE='\033[38;5;208m'
+# Matrix/Cyber Colors
+MATRIX_GREEN='\033[38;5;46m'
+DARK_GREEN='\033[38;5;34m'
+NEON_GREEN='\033[38;5;82m'
+CYBER_RED='\033[38;5;196m'
+BLOOD_RED='\033[38;5;160m'
+NEON_CYAN='\033[38;5;51m'
+ELECTRIC_BLUE='\033[38;5;33m'
+DARK_GRAY='\033[38;5;236m'
+TERMINAL_GREEN='\033[38;5;40m'
+HACKER_YELLOW='\033[38;5;226m'
 WHITE='\033[38;5;231m'
-GRAY='\033[38;5;243m'
-PURPLE='\033[38;5;165m'
-PINK='\033[38;5;205m'
+BLACK='\033[38;5;232m'
 
 # Flag Colors
 FLAG_RED='\033[48;5;196m'
@@ -27,94 +27,80 @@ FLAG_BLACK='\033[48;5;232m'
 FLAG_WHITE='\033[48;5;231m'
 STAR_RED='\033[38;5;196m'
 
-# Box Drawing Characters
-TOP_LEFT='╔'
-TOP_RIGHT='╗'
-BOTTOM_LEFT='╚'
-BOTTOM_RIGHT='╝'
-HORIZONTAL='═'
-VERTICAL='║'
-T_RIGHT='╠'
-T_LEFT='╣'
-DOUBLE_HORIZONTAL='─'
-HEAVY_HORIZONTAL='━'
-
-# Icons
-ICON_USER='👤'
-ICON_STAR='★'
-ICON_ROCKET='🚀'
-ICON_COMPUTER='💻'
-ICON_GEAR='⚙️'
-ICON_CLOCK='🕐'
-ICON_TERMINAL='⌨️'
-ICON_CHIP='🔧'
-ICON_GLOBE='🌐'
-ICON_FLAG='🏴'
-ICON_HEART='❤️'
+# Cyber ASCII Characters
+SKULL='☠'
+CROSSHAIR='⊕'
+LOCK='🔒'
+UNLOCK='🔓'
+STAR='★'
+LIGHTNING='⚡'
+TERMINAL='▶'
+SKULL_ICON='💀'
+FIRE='🔥'
+HACKER='⚠'
+ALERT='⚠'
 
 # Syria Liberation Date
 CURRENT_DATE="08.12.2024"
 
-# Welcome Message with Modern Design
+# Hacker-Style Welcome Banner
 welcome_message() {
-    local width=60
-    local line=$(printf '%*s' "$width" | tr ' ' "${HORIZONTAL}")
-
     echo
-    echo -e "${MAGENTA}${TOP_LEFT}${line}${TOP_RIGHT}${RESET}"
-    echo -e "${MAGENTA}${VERTICAL}${RESET}                                                            ${MAGENTA}${VERTICAL}${RESET}"
-    echo -e "${MAGENTA}${VERTICAL}${RESET}       ${BRIGHT_GREEN}${BOLD}${ICON_ROCKET}  Welcome Back! Have fun :)  ${ICON_ROCKET}${RESET}           ${MAGENTA}${VERTICAL}${RESET}"
-    echo -e "${MAGENTA}${VERTICAL}${RESET}                                                            ${MAGENTA}${VERTICAL}${RESET}"
-    echo -e "${MAGENTA}${VERTICAL}${RESET}             ${RED}${BOLD}${ICON_FLAG}  SYRIA FREE  ${ICON_STAR}  ${CURRENT_DATE}  ${ICON_FLAG}${RESET}          ${MAGENTA}${VERTICAL}${RESET}"
-    echo -e "${MAGENTA}${VERTICAL}${RESET}                                                            ${MAGENTA}${VERTICAL}${RESET}"
-    echo -e "${MAGENTA}${BOTTOM_LEFT}${line}${BOTTOM_RIGHT}${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}"
+    echo -e "    ███████╗██╗   ██╗██████╗ ██╗ █████╗     ███████╗██████╗ ███████╗███████╗"
+    echo -e "    ██╔════╝╚██╗ ██╔╝██╔══██╗██║██╔══██╗    ██╔════╝██╔══██╗██╔════╝██╔════╝"
+    echo -e "    ███████╗ ╚████╔╝ ██████╔╝██║███████║    █████╗  ██████╔╝█████╗  █████╗  "
+    echo -e "    ╚════██║  ╚██╔╝  ██╔══██╗██║██╔══██║    ██╔══╝  ██╔══██╗██╔══╝  ██╔══╝  "
+    echo -e "    ███████║   ██║   ██║  ██║██║██║  ██║    ██║     ██║  ██║███████╗███████╗"
+    echo -e "    ╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝    ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝"
+    echo -e "${RESET}"
+    echo -e "${CYBER_RED}${BOLD}    ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓${RESET}"
+    echo -e "${CYBER_RED}${BOLD}    ┃${RESET}  ${FIRE}${BOLD}  LIBERATION DATE: ${CURRENT_DATE}  ${FIRE}                       ${CYBER_RED}${BOLD}┃${RESET}"
+    echo -e "${CYBER_RED}${BOLD}    ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛${RESET}"
     echo
-    sleep 1.2
+    echo -e "${TERMINAL_GREEN}${TERMINAL}${RESET} ${NEON_GREEN}SYSTEM ACCESS GRANTED...${RESET}"
+    echo -e "${TERMINAL_GREEN}${TERMINAL}${RESET} ${NEON_GREEN}Initializing SyriaShell...${RESET}"
+    echo
+    sleep 0.8
 }
 
-# Syrian Flag with Modern Styling
+# Cyber Syrian Flag
 draw_flag() {
-    local width=60
-    local line=$(printf '%*s' "$width" | tr ' ' "${HORIZONTAL}")
-
-    echo -e "${CYAN}${TOP_LEFT}${line}${TOP_RIGHT}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}                                                            ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}           ${PINK}${BOLD}${ICON_USER}  Abdulhalim ALnasani${RESET}                       ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}           ${BLUE}${BOLD}${ICON_GLOBE}  https://www.alnasani.com${RESET}                  ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}                                                            ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${T_RIGHT}${line}${T_LEFT}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}                                                            ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}                   ${GRAY}${BOLD}Syrian Flag${RESET}                         ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}         ${GRAY}┌────────────────────────────┐${RESET}                ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}         ${GRAY}│${FLAG_GREEN}                            ${RESET}${GRAY}│${RESET}                ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}         ${GRAY}│${FLAG_GREEN}                            ${RESET}${GRAY}│${RESET}                ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}         ${GRAY}│${FLAG_WHITE}       ${STAR_RED}${BOLD}${ICON_STAR}     ${ICON_STAR}     ${ICON_STAR}${FLAG_WHITE}       ${RESET}${GRAY}│${RESET}                ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}         ${GRAY}│${FLAG_WHITE}                            ${RESET}${GRAY}│${RESET}                ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}         ${GRAY}│${FLAG_BLACK}                            ${RESET}${GRAY}│${RESET}                ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}         ${GRAY}│${FLAG_BLACK}                            ${RESET}${GRAY}│${RESET}                ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}         ${GRAY}└────────────────────────────┘${RESET}                ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}                                                            ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${T_RIGHT}${line}${T_LEFT}${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ╔════════════════════════════════════════════════════════════╗${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}  ${NEON_CYAN}${CROSSHAIR}${RESET} ${HACKER_YELLOW}OPERATOR:${RESET} ${WHITE}Abdulhalim ALnasani${RESET}                      ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}  ${NEON_CYAN}${LIGHTNING}${RESET} ${HACKER_YELLOW}WEBSITE:${RESET}  ${ELECTRIC_BLUE}https://www.alnasani.com${RESET}              ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ╠════════════════════════════════════════════════════════════╣${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}                                                            ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}              ${CYBER_RED}${BOLD}[ SYRIAN FLAG - ACTIVE ]${RESET}                 ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}                                                            ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}           ${DARK_GRAY}╔══════════════════════════════╗${RESET}              ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}           ${DARK_GRAY}║${FLAG_GREEN}                              ${RESET}${DARK_GRAY}║${RESET}              ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}           ${DARK_GRAY}║${FLAG_GREEN}                              ${RESET}${DARK_GRAY}║${RESET}              ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}           ${DARK_GRAY}║${FLAG_WHITE}         ${STAR_RED}${BOLD}${STAR}     ${STAR}     ${STAR}${FLAG_WHITE}         ${RESET}${DARK_GRAY}║${RESET}              ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}           ${DARK_GRAY}║${FLAG_WHITE}                              ${RESET}${DARK_GRAY}║${RESET}              ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}           ${DARK_GRAY}║${FLAG_BLACK}                              ${RESET}${DARK_GRAY}║${RESET}              ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}           ${DARK_GRAY}║${FLAG_BLACK}                              ${RESET}${DARK_GRAY}║${RESET}              ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}           ${DARK_GRAY}╚══════════════════════════════╝${RESET}              ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}                                                            ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ╠════════════════════════════════════════════════════════════╣${RESET}"
 }
 
-# System Information with Icons and Modern Layout
+# Hacker-Style System Information
 add_info() {
-    local width=60
-    local line=$(printf '%*s' "$width" | tr ' ' "${HORIZONTAL}")
-
-    echo -e "${CYAN}${VERTICAL}${RESET}                                                            ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}        ${YELLOW}${BOLD}${ICON_COMPUTER}  System Information${RESET}                           ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}        ${GRAY}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${RESET}                         ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}                                                            ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}        ${BRIGHT_GREEN}${ICON_GEAR}${RESET}  ${ORANGE}OS:${RESET}        ${WHITE}$(lsb_release -d | cut -f2)${RESET}  ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}        ${BRIGHT_GREEN}${ICON_CHIP}${RESET}  ${ORANGE}Kernel:${RESET}    ${WHITE}$(uname -r)${RESET}                         ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}        ${BRIGHT_GREEN}${ICON_CLOCK}${RESET}  ${ORANGE}Uptime:${RESET}    ${WHITE}$(uptime -p)${RESET}            ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}        ${BRIGHT_GREEN}${ICON_TERMINAL}${RESET}  ${ORANGE}Shell:${RESET}     ${WHITE}$SHELL${RESET}                          ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}        ${BRIGHT_GREEN}💠${RESET}  ${ORANGE}Terminal:${RESET}  ${WHITE}$TERM${RESET}                              ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}                                                            ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${BOTTOM_LEFT}${line}${BOTTOM_RIGHT}${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}                                                            ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}        ${CYBER_RED}${BOLD}[${ALERT}] SYSTEM DIAGNOSTICS ${ALERT}${RESET}                      ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}        ${DARK_GRAY}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}             ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}                                                            ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}        ${TERMINAL_GREEN}${TERMINAL}${RESET} ${HACKER_YELLOW}OS:${RESET}        ${NEON_GREEN}$(lsb_release -d | cut -f2)${RESET}  ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}        ${TERMINAL_GREEN}${TERMINAL}${RESET} ${HACKER_YELLOW}KERNEL:${RESET}    ${NEON_GREEN}$(uname -r)${RESET}                         ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}        ${TERMINAL_GREEN}${TERMINAL}${RESET} ${HACKER_YELLOW}UPTIME:${RESET}    ${NEON_GREEN}$(uptime -p)${RESET}            ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}        ${TERMINAL_GREEN}${TERMINAL}${RESET} ${HACKER_YELLOW}SHELL:${RESET}     ${NEON_GREEN}$SHELL${RESET}                          ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}        ${TERMINAL_GREEN}${TERMINAL}${RESET} ${HACKER_YELLOW}TERMINAL:${RESET}  ${NEON_GREEN}$TERM${RESET}                              ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ║${RESET}                                                            ${MATRIX_GREEN}${BOLD}║${RESET}"
+    echo -e "${MATRIX_GREEN}${BOLD}    ╚════════════════════════════════════════════════════════════╝${RESET}"
     echo
-    echo -e "        ${GRAY}Made with ${ICON_HEART}  by Abdulhalim ALnasani${RESET}"
+    echo -e "    ${DARK_GREEN}[${UNLOCK}] ${TERMINAL_GREEN}Access granted by:${RESET} ${NEON_CYAN}Abdulhalim ALnasani${RESET}"
+    echo -e "    ${DARK_GREEN}[${FIRE}] ${CYBER_RED}${BOLD}SYRIA FREE - LIBERATION ACTIVATED${RESET}"
     echo
 }
 
