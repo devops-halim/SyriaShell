@@ -17,12 +17,15 @@ YELLOW='\033[38;5;226m'
 ORANGE='\033[38;5;208m'
 WHITE='\033[38;5;231m'
 GRAY='\033[38;5;243m'
+PURPLE='\033[38;5;165m'
+PINK='\033[38;5;205m'
 
-# Background Colors
-BG_RED='\033[48;5;196m'
-BG_WHITE='\033[48;5;231m'
-BG_BLACK='\033[48;5;232m'
-BG_GREEN='\033[48;5;46m'
+# Flag Colors
+FLAG_RED='\033[48;5;196m'
+FLAG_GREEN='\033[48;5;28m'
+FLAG_BLACK='\033[48;5;232m'
+FLAG_WHITE='\033[48;5;231m'
+STAR_RED='\033[38;5;196m'
 
 # Box Drawing Characters
 TOP_LEFT='╔'
@@ -33,6 +36,8 @@ HORIZONTAL='═'
 VERTICAL='║'
 T_RIGHT='╠'
 T_LEFT='╣'
+DOUBLE_HORIZONTAL='─'
+HEAVY_HORIZONTAL='━'
 
 # Icons
 ICON_USER='👤'
@@ -43,6 +48,9 @@ ICON_GEAR='⚙️'
 ICON_CLOCK='🕐'
 ICON_TERMINAL='⌨️'
 ICON_CHIP='🔧'
+ICON_GLOBE='🌐'
+ICON_FLAG='🏴'
+ICON_HEART='❤️'
 
 # Syria Liberation Date
 CURRENT_DATE="08.12.2024"
@@ -53,43 +61,60 @@ welcome_message() {
     local line=$(printf '%*s' "$width" | tr ' ' "${HORIZONTAL}")
 
     echo
-    echo -e "${CYAN}${TOP_LEFT}${line}${TOP_RIGHT}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}                                                            ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}        ${BRIGHT_GREEN}${BOLD}${ICON_ROCKET}  Welcome Back! Have fun :)  ${ICON_ROCKET}${RESET}           ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}                                                            ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}              ${RED}${BOLD}SYRIA FREE  ${ICON_STAR}  ${CURRENT_DATE}${RESET}                ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}                                                            ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${BOTTOM_LEFT}${line}${BOTTOM_RIGHT}${RESET}"
+    echo -e "${MAGENTA}${TOP_LEFT}${line}${TOP_RIGHT}${RESET}"
+    echo -e "${MAGENTA}${VERTICAL}${RESET}                                                            ${MAGENTA}${VERTICAL}${RESET}"
+    echo -e "${MAGENTA}${VERTICAL}${RESET}       ${BRIGHT_GREEN}${BOLD}${ICON_ROCKET}  Welcome Back! Have fun :)  ${ICON_ROCKET}${RESET}           ${MAGENTA}${VERTICAL}${RESET}"
+    echo -e "${MAGENTA}${VERTICAL}${RESET}                                                            ${MAGENTA}${VERTICAL}${RESET}"
+    echo -e "${MAGENTA}${VERTICAL}${RESET}             ${RED}${BOLD}${ICON_FLAG}  SYRIA FREE  ${ICON_STAR}  ${CURRENT_DATE}  ${ICON_FLAG}${RESET}          ${MAGENTA}${VERTICAL}${RESET}"
+    echo -e "${MAGENTA}${VERTICAL}${RESET}                                                            ${MAGENTA}${VERTICAL}${RESET}"
+    echo -e "${MAGENTA}${BOTTOM_LEFT}${line}${BOTTOM_RIGHT}${RESET}"
     echo
-    sleep 1.5
+    sleep 1.2
 }
 
 # Syrian Flag with Modern Styling
 draw_flag() {
-    echo -e "${CYAN}${TOP_LEFT}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${TOP_RIGHT}${RESET}"
+    local width=60
+    local line=$(printf '%*s' "$width" | tr ' ' "${HORIZONTAL}")
+
+    echo -e "${CYAN}${TOP_LEFT}${line}${TOP_RIGHT}${RESET}"
     echo -e "${CYAN}${VERTICAL}${RESET}                                                            ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}              ${MAGENTA}${BOLD}${ICON_USER} Abdulhalim ALnasani${RESET}                      ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}              ${BLUE}🌐 www.alnasani.com${RESET}                          ${CYAN}${VERTICAL}${RESET}"
+    echo -e "${CYAN}${VERTICAL}${RESET}           ${PINK}${BOLD}${ICON_USER}  Abdulhalim ALnasani${RESET}                       ${CYAN}${VERTICAL}${RESET}"
+    echo -e "${CYAN}${VERTICAL}${RESET}           ${BLUE}${BOLD}${ICON_GLOBE}  https://www.alnasani.com${RESET}                  ${CYAN}${VERTICAL}${RESET}"
     echo -e "${CYAN}${VERTICAL}${RESET}                                                            ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${T_RIGHT}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${T_LEFT}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}            ${BG_RED}                                    ${RESET}            ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}            ${BG_WHITE}              ${RED}${ICON_STAR}    ${ICON_STAR}    ${ICON_STAR}${BG_WHITE}              ${RESET}            ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}            ${BG_BLACK}                                    ${RESET}            ${CYAN}${VERTICAL}${RESET}"
+    echo -e "${CYAN}${T_RIGHT}${line}${T_LEFT}${RESET}"
     echo -e "${CYAN}${VERTICAL}${RESET}                                                            ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${T_RIGHT}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${T_LEFT}${RESET}"
+    echo -e "${CYAN}${VERTICAL}${RESET}                   ${GRAY}${BOLD}Syrian Flag${RESET}                         ${CYAN}${VERTICAL}${RESET}"
+    echo -e "${CYAN}${VERTICAL}${RESET}         ${GRAY}┌────────────────────────────┐${RESET}                ${CYAN}${VERTICAL}${RESET}"
+    echo -e "${CYAN}${VERTICAL}${RESET}         ${GRAY}│${FLAG_RED}                            ${RESET}${GRAY}│${RESET}                ${CYAN}${VERTICAL}${RESET}"
+    echo -e "${CYAN}${VERTICAL}${RESET}         ${GRAY}│${FLAG_RED}                            ${RESET}${GRAY}│${RESET}                ${CYAN}${VERTICAL}${RESET}"
+    echo -e "${CYAN}${VERTICAL}${RESET}         ${GRAY}│${FLAG_WHITE}       ${STAR_RED}${BOLD}${ICON_STAR}     ${ICON_STAR}     ${ICON_STAR}${FLAG_WHITE}       ${RESET}${GRAY}│${RESET}                ${CYAN}${VERTICAL}${RESET}"
+    echo -e "${CYAN}${VERTICAL}${RESET}         ${GRAY}│${FLAG_WHITE}                            ${RESET}${GRAY}│${RESET}                ${CYAN}${VERTICAL}${RESET}"
+    echo -e "${CYAN}${VERTICAL}${RESET}         ${GRAY}│${FLAG_BLACK}                            ${RESET}${GRAY}│${RESET}                ${CYAN}${VERTICAL}${RESET}"
+    echo -e "${CYAN}${VERTICAL}${RESET}         ${GRAY}│${FLAG_BLACK}                            ${RESET}${GRAY}│${RESET}                ${CYAN}${VERTICAL}${RESET}"
+    echo -e "${CYAN}${VERTICAL}${RESET}         ${GRAY}└────────────────────────────┘${RESET}                ${CYAN}${VERTICAL}${RESET}"
+    echo -e "${CYAN}${VERTICAL}${RESET}                                                            ${CYAN}${VERTICAL}${RESET}"
+    echo -e "${CYAN}${T_RIGHT}${line}${T_LEFT}${RESET}"
 }
 
 # System Information with Icons and Modern Layout
 add_info() {
-    echo -e "${CYAN}${VERTICAL}${RESET}   ${YELLOW}${BOLD}${ICON_COMPUTER}  System Information${RESET}                                  ${CYAN}${VERTICAL}${RESET}"
+    local width=60
+    local line=$(printf '%*s' "$width" | tr ' ' "${HORIZONTAL}")
+
     echo -e "${CYAN}${VERTICAL}${RESET}                                                            ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}   ${BRIGHT_GREEN}${ICON_GEAR}  OS:${RESET}       ${WHITE}$(lsb_release -d | cut -f2)${RESET}       ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}   ${BRIGHT_GREEN}${ICON_CHIP}  Kernel:${RESET}   ${WHITE}$(uname -r)${RESET}                                  ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}   ${BRIGHT_GREEN}${ICON_CLOCK}  Uptime:${RESET}   ${WHITE}$(uptime -p)${RESET}                     ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}   ${BRIGHT_GREEN}${ICON_TERMINAL}  Shell:${RESET}    ${WHITE}$SHELL${RESET}                                   ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${VERTICAL}${RESET}   ${BRIGHT_GREEN}💠 Terminal:${RESET} ${WHITE}$TERM${RESET}                                       ${CYAN}${VERTICAL}${RESET}"
+    echo -e "${CYAN}${VERTICAL}${RESET}        ${YELLOW}${BOLD}${ICON_COMPUTER}  System Information${RESET}                           ${CYAN}${VERTICAL}${RESET}"
+    echo -e "${CYAN}${VERTICAL}${RESET}        ${GRAY}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${DOUBLE_HORIZONTAL}${RESET}                         ${CYAN}${VERTICAL}${RESET}"
     echo -e "${CYAN}${VERTICAL}${RESET}                                                            ${CYAN}${VERTICAL}${RESET}"
-    echo -e "${CYAN}${BOTTOM_LEFT}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${HORIZONTAL}${BOTTOM_RIGHT}${RESET}"
+    echo -e "${CYAN}${VERTICAL}${RESET}        ${BRIGHT_GREEN}${ICON_GEAR}${RESET}  ${ORANGE}OS:${RESET}        ${WHITE}$(lsb_release -d | cut -f2)${RESET}  ${CYAN}${VERTICAL}${RESET}"
+    echo -e "${CYAN}${VERTICAL}${RESET}        ${BRIGHT_GREEN}${ICON_CHIP}${RESET}  ${ORANGE}Kernel:${RESET}    ${WHITE}$(uname -r)${RESET}                         ${CYAN}${VERTICAL}${RESET}"
+    echo -e "${CYAN}${VERTICAL}${RESET}        ${BRIGHT_GREEN}${ICON_CLOCK}${RESET}  ${ORANGE}Uptime:${RESET}    ${WHITE}$(uptime -p)${RESET}            ${CYAN}${VERTICAL}${RESET}"
+    echo -e "${CYAN}${VERTICAL}${RESET}        ${BRIGHT_GREEN}${ICON_TERMINAL}${RESET}  ${ORANGE}Shell:${RESET}     ${WHITE}$SHELL${RESET}                          ${CYAN}${VERTICAL}${RESET}"
+    echo -e "${CYAN}${VERTICAL}${RESET}        ${BRIGHT_GREEN}💠${RESET}  ${ORANGE}Terminal:${RESET}  ${WHITE}$TERM${RESET}                              ${CYAN}${VERTICAL}${RESET}"
+    echo -e "${CYAN}${VERTICAL}${RESET}                                                            ${CYAN}${VERTICAL}${RESET}"
+    echo -e "${CYAN}${BOTTOM_LEFT}${line}${BOTTOM_RIGHT}${RESET}"
+    echo
+    echo -e "        ${GRAY}Made with ${ICON_HEART}  by Abdulhalim ALnasani${RESET}"
     echo
 }
 
